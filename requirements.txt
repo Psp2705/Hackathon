@@ -4,7 +4,6 @@ langchain-core
 langchain-ollama 
 chromadb 
 sentence-transformers 
-pypdf 
 python-dotenv 
 unstructured[pdf] 
 tiktoken
@@ -18,3 +17,6 @@ pydantic
 duckduckgo-search
 
 google-generativeai
+langdetect 
+googletrans
+PyMuPDF

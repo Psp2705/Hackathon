@@ -4,34 +4,50 @@
     "type": "term",
     "premium": 500,
     "coverage": 500000,
-    "features": ["low premium", "family cover", "tax benefit"]
+    "features": ["low premium", "family cover", "tax benefit"],
+    "trust_score": 85
   },
   {
     "name": "Grow Plus ULIP",
     "type": "ulip",
     "premium": 1500,
     "coverage": 300000,
-    "features": ["investment", "flexible payout"]
+    "features": ["investment", "flexible payout"],
+    "trust_score": 78
   },
   {
     "name": "SecureLife Term Plan",
     "type": "term",
     "premium": 400,
     "coverage": 500000,
-    "features": ["low premium", "family cover", "tax benefit"]
+    "features": ["low premium", "family cover", "tax benefit"],
+    "trust_score": 88
   },
   {
     "name": "GrowULIP Investment Plan",
     "type": "ulip",
     "premium": 1500,
     "coverage": 300000,
-    "features": ["investment", "high return", "tax benefit"]
+    "features": ["investment", "high return", "tax benefit"],
+    "trust_score": 82
   },
   {
     "name": "Senior Health Protect",
     "type": "health",
     "premium": 1200,
     "coverage": 200000,
-    "features": ["health cover", "no pre-conditions", "hospital benefits"]
+    "features": ["health cover", "no pre-conditions", "hospital benefits"],
+    "trust_score": 80
+  },
+  {
+    "name": "LIC Jeevan Anand",
+    "type": "term",
+    "coverage": 500000,
+    "premium": 400,
+    "features": ["low premium", "tax benefit", "family cover"],
+    "riders": ["accident cover", "critical illness"],
+    "company": "LIC",
+    "claim_settlement_ratio": 98.3,
+    "trust_score": 92
   }
 ]
