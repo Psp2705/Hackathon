@@ -15,7 +15,8 @@ langchain-openai
 langchain-anthropic
 pydantic
 duckduckgo-search
-
+flask
+flask-cors
 google-generativeai
 langdetect 
 googletrans
