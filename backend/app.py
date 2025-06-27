@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from agent import ask_question, explain_policy
 from policy_compare import recommend_policies
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -30,7 +31,8 @@ def explain():
     return jsonify({"explanation": explanation})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  
+    app.run(host="0.0.0.0", port=port)
 
 
 
