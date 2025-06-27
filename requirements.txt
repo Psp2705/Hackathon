@@ -11,3 +11,10 @@ tiktoken
 streamlit
 requests
 openai
+wikipedia
+langchain-openai
+langchain-anthropic
+pydantic
+duckduckgo-search
+
+google-generativeai
