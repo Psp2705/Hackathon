@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Smart Family Plan",
+    "type": "term",
+    "premium": 500,
+    "coverage": 500000,
+    "features": ["low premium", "family cover", "tax benefit"]
+  },
+  {
+    "name": "Grow Plus ULIP",
+    "type": "ulip",
+    "premium": 1500,
+    "coverage": 300000,
+    "features": ["investment", "flexible payout"]
+  },
+  {
+    "name": "SecureLife Term Plan",
+    "type": "term",
+    "premium": 400,
+    "coverage": 500000,
+    "features": ["low premium", "family cover", "tax benefit"]
+  },
+  {
+    "name": "GrowULIP Investment Plan",
+    "type": "ulip",
+    "premium": 1500,
+    "coverage": 300000,
+    "features": ["investment", "high return", "tax benefit"]
+  },
+  {
+    "name": "Senior Health Protect",
+    "type": "health",
+    "premium": 1200,
+    "coverage": 200000,
+    "features": ["health cover", "no pre-conditions", "hospital benefits"]
+  }
+]
