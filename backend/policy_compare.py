@@ -19,12 +19,12 @@ def recommend_policies(user_input: str):
 
         # Needs match
         for need in user_input["needs"]:
-            if need in policy["features"]:
+            if need in policy.get("features", []):
                 score += 10
 
         # Riders match
         for rider in user_input["riders"]:
-            if rider in policy["riders"]:
+            if rider in policy.get("riders", []):
                 score += 5
 
         # Age-based bonus (example)
@@ -34,8 +34,10 @@ def recommend_policies(user_input: str):
         policy["score"] = min(score, 100)
         results.append(policy)
 
+    sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
+
     # Sort policies by score descending
-    return sorted(results, key=lambda x: x["score"], reverse=True)
+    return sorted_results[:3]
 
 
     # keywords = user_input.lower()
