@@ -45,3 +45,33 @@ Riders: {', '.join(policy['riders'])}
 """
     result = model.generate_content(prompt)
     return result.text
+
+def get_insurance_type_recommendation(age, income, dependents, goals):
+    goals_text = ", ".join(goals) if isinstance(goals, list) else goals
+    prompt = f"""
+    You are an expert insurance advisor.
+
+    Based on the following user profile:
+
+    - Age: {age}
+    - Income: {income}
+    - Has Dependents: {dependents}
+    - Financial Goals: {goals_text}
+
+    Recommend the most suitable types of insurance (e.g., term, health, ULIP, life) and briefly explain why, in simple language.
+    """
+
+    response = model.generate_content(prompt)
+    return response.text
+
+def simulate_insurance_scenario(age, insurance, scenario):
+    prompt = f"""
+    A user is {age} years old and holds the following insurance: {insurance}.
+    Simulate the impact of this scenario: {scenario}.
+
+    Explain what protections, benefits, or gaps this insurance would provide during such an event.
+    Keep the explanation clear and simple.
+    """
+
+    result = model.generate_content(prompt)
+    return result.text

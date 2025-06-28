@@ -21,14 +21,10 @@ const PolicyComparison = () => {
     setResults([]); // Clear previous results
     setHasSearched(true); // Set search state to true
     try {
+    
+     
+     const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/compare-policies`, input);
 
-      const processedInput = {
-        ...input,
-        needs: input.needs.split(',').map(v => v.trim()).filter(v => v !== ''),
-        riders: input.riders.split(',').map(v => v.trim()).filter(v => v !== ''),
-      };
-
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/compare-policies`, input);
       const topResults = res.data.slice(0, 3);
       setResults(topResults);
 
@@ -72,11 +68,12 @@ const PolicyComparison = () => {
         <div className="col-md-4 mb-3">
           <label htmlFor="insuranceTypeSelect" className="form-label">Insurance Type:</label>
           <select id="insuranceTypeSelect" className="form-select" value={input.type}
-                  onChange={(e) => handleInputChange("type", e.target.value.toLowerCase())} disabled={loading}>
-            <option>Any</option>
-            <option>Term</option>
-            <option>ULIP</option>
-            <option>Health</option>
+                  onChange={(e) => handleInputChange("type", e.target.value.toLowerCase())}>
+            <option value="any">Any</option>
+            <option value="term">Term</option>
+            <option value="ulip">ULIP</option>
+            <option value="health">Health</option>
+
           </select>
         </div>
 

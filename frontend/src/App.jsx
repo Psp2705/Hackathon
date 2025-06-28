@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PolicyComparison from "./pages/PolicyComparison";
 import InsuranceQA from "./pages/InsuranceQA";
-
-
+import PersonalizedSuggest from "./pages/PersonalizedSuggest";
+import ScenarioSimulator from "./pages/ScenarioSimulator";
+import Navbar from './components/Navbar'; // Optional if using a nav
 
 
 function App() {
@@ -37,6 +38,12 @@ function App() {
                 <li className="nav-item">
                   <Link className="nav-link" to="/compare">Policy Comparison</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/recommend">Smart Suggestion</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/simulate">What-if Simulator</Link>
+                </li>
                 <li className="nav-item ms-lg-3"> {/* Margin for spacing on larger screens */}
                   <button className="btn btn-sm btn-outline-light" onClick={() => setDark(!dark)}>
                     {dark ? "☀ Light Mode" : "🌙 Dark Mode"}
@@ -53,6 +60,8 @@ function App() {
           <Routes>
             <Route path="/" element={<InsuranceQA />} />
             <Route path="/compare" element={<PolicyComparison />} />
+            <Route path="/recommend" element={<PersonalizedSuggest />} /> {/* ✅ New route */}
+            <Route path="/simulate" element={<ScenarioSimulator />} />
           </Routes>
         </div>
       </div>

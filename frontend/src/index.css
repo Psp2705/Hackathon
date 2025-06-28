@@ -14,13 +14,13 @@ body {
   color: #fff;
 }
 .btn-gradient {
-  background: linear-gradient(90deg, #0f0f0f, #573379);
+  background: linear-gradient(90deg, #573379, #573379);
   color: #FFFFFF;  /* Keep original color for contrast */
   border-radius: 0.5rem; /* Rounded button corners */
   transition: all 0.3s ease; /* Smooth transition for hover */
 }
 .btn-gradient:hover {
-  background: linear-gradient(90deg, #131216, #7e22ce);
+  background: linear-gradient(90deg, #7e22ce, #7e22ce);
   box-shadow: 0 4px 15px rgba(33, 16, 50, 0.4); /* Subtle shadow on hover */
 }
 

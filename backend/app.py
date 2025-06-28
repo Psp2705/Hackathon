@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from agent import ask_question, explain_policy
+from agent import ask_question, explain_policy, get_insurance_type_recommendation, simulate_insurance_scenario
 from policy_compare import recommend_policies
 import os
 
@@ -29,6 +29,34 @@ def explain():
     user_input = data["user_input"]
     explanation = explain_policy(policy, user_input)
     return jsonify({"explanation": explanation})
+
+
+@app.route("/recommend-insurance-type", methods=["POST"])
+def recommend_type():
+    data = request.get_json()
+    age = data.get("age")
+    income = data.get("income")
+    dependents = data.get("dependents")
+    goals = data.get("goals")
+
+    try:
+        result = get_insurance_type_recommendation(age, income, dependents, goals)
+        return jsonify({"recommendation": result})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/simulate-scenario", methods=["POST"])
+def simulate_scenario():
+    data = request.get_json()
+    age = data.get("age")
+    insurance = data.get("insurance")
+    scenario = data.get("scenario")
+
+    try:
+        result = simulate_insurance_scenario(age, insurance, scenario)
+        return jsonify({"answer": result})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  
